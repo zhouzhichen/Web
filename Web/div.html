@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*
+        body{
+            margin: 0px;去掉了默认的边界
+        }
+*/
+
+        #div {
+            width: 400px;
+            height: 500px;
+            background-color: gray;
+            border: black solid 1px;
+        }
+
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: aqua;
+            border: red solid 1px;
+        }
+
+        #div1 {
+            padding: 100px 30px 50px 10px;
+            /*先是上下后是左右,如果是4个参数就按照从12点方向的顺时针运转*/
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="div">
+        <div id="div1">这是我的第一个div</div>
+        <div>这是我的第二个div</div>
+        <div>这是我的第三个div</div>
+    </div>
+</body>
+</html>

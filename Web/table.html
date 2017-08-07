@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style type="text/css">
+        div {
+            /*标签选择器（内嵌样式表）*/
+            border:2px;
+            width: 300px;
+            height: 150px;
+            background: red;
+        }
+
+        #title {
+            /*id选择器（内嵌样式表）*/
+            background-color: aqua
+        }
+
+        .cat {
+            /*****类选择器（内嵌样式表）*/
+            background-color: chocolate
+        }
+        /*在选择实现当中，行内属性（行内样式）>id>类>标签*/
+    </style>
+
+    <link rel="stylesheet" href="div.css" style="text/css">
+    <!-- 和上面实现的结果是一样的（外联样式表）-->
+
+<!--    <a href="www.baidu.com" >ertert</a>-->
+
+</head>
+
+<body>
+    <table border="1" style="width:400px">
+        <!--表格-->
+        <tr>
+
+            <th id="title">名字表</th>
+            <th class="cat">年龄</th>
+            <th>性别</th>
+        </tr>
+        <tr>
+            <!--行-->
+
+            <td>
+                <!--列-->
+                张三
+            </td>
+            <td>
+                18
+            </td>
+            <td rowspan="3">
+                <!--合并竖列-->
+                男
+            </td>
+        </tr>
+        <tr>
+            <!--行-->
+
+            <td>
+                <!--列-->
+                李四
+            </td>
+            <td>
+                18
+            </td>
+
+        </tr>
+        <tr>
+            <!--行-->
+
+            <td>
+                <!--列-->
+                王五
+            </td>
+            <td>
+                18
+            </td>
+
+        </tr>
+        <tr>
+            <!--行-->
+
+            <td>
+                <!--列-->
+                小花
+            </td>
+            <td colspan="2">
+                <!--合并横行-->
+                18
+            </td>
+            <td>
+                女
+            </td>
+        </tr>
+    </table>
+
+
+
+    <span> 用户名：</span><input type="text"><br>
+    <span>用户密码：</span> <input type="password"> <br>
+    <span>确认密码：</span> <input type="password"><br>
+    <span>性别：</span> <input type="radio" name="sex">男<input type="radio" name="sex" checked="checked">女 <br>
+    <span>兴趣爱好：<br>
+    <input type="checkbox">女 <br>
+    <input type="checkbox">男 <br>
+    <input type="checkbox">人妖 <br> 
+    <span> 选择文件:</span>
+    <input type="file" />
+    <br> 选择省份：</span>
+    <select name="" id="">
+        <option value="">四川省</option>
+        <option value="">云南省</option>
+        <option value="">海南省</option>
+        <option value="">广东省</option>
+        <option value="">河南省</option>
+     </select>
+    <br>
+    <span> 隐藏表单：</span>
+    <inut type="hidden"></inut> <br>
+    <input style="width:100px;height:100px" type="button" onclick="alert('你好，欢迎点击')">
+    <br> <span> 个人说明：</span>
+    <br> <textarea name="" id="" cols="40" rows="10"></textarea>
+    <br> <span> 一个图片：</span>
+    <input type="image" src="img/xiamu.jpg" style="width: 300px">
+    <br>
+
+
+
+    <form action="">
+        <table border="1" bordercolor="red" cellpadding="10" cellspacing="0" style="width:400px">
+            <tr>
+                <td colspan="3" align="center">用户注册</td>
+
+            </tr>
+            <tr>
+                <td align="center">用户名</td>
+                <td align="center"><input type="text"></td>
+            </tr>
+            <tr>
+                <td align="center">密码</td>
+                <td align="center"><input type="password"></td>
+            </tr>
+            <tr>
+                <td align="center">性别</td>
+                <td align="center"><input type="radio" name="sex">男 <input type="radio" name="sex">女</td>
+            </tr>
+            <tr>
+                <td align="center">爱好</td>
+                <td align="center">
+                    <input type="checkbox">游戏
+                    <input type="checkbox">篮球
+                    <input type="checkbox">足球
+                    <input type="checkbox">电影
+                </td>
+            </tr>
+            <tr>
+                <td align="center">家乡</td>
+                <td align="center">
+
+                    <select name="" id="">
+               <option>眉山</option>
+               <option>成都</option>
+               <option>德阳</option>
+               <option>达州</option>
+               <option>攀枝花</option>
+           </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2"><input type="reset" value="清除按钮"><input type="submit" value="提交按钮"></td>
+
+            </tr>
+
+
+        </table>
+    </form>
+    <font size="7px"> 大 <b>家</b>下午<i>好</i>，<u>晚上</u>吃什么？</font>
+    <br>
+    <div style="width: 300px;height: 150px;background: red"></div>
+    <br>
+    <div style="border: solid 2px;width: 300px;height: 150px;background: red"></div>
+    <br>
+    <div style="border: solid 2px;width: 300px;height: 150px;background: red"></div>
+
+    <!--
+        <div ></div> 在head里面设置style的div实现的结果和上面一样，只是节约了代码量
+        <div class="cat"></div>
+        <div id="title"></div>
+-->
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        a {
+            background-color: aqua;
+            color: black;
+            font-size: 16px;
+            font-family: cursive;
+            text-decoration: none;
+        }
+        /*鼠标滑动效果*/
+
+        a:hover {
+            background-color: bisque;
+            color: white;
+            font-size: 16px;
+        }
+        /*点击效果*/
+
+        a:active {
+            background-color: red;
+        }
+        /*点击过后效果*/
+
+        a:visited {
+            background-color: yellow;
+        }
+
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: darkred;
+            border: black double 5px;
+            /*第一个参数表示颜色，第二个参数表示线性，第三个参数表示大小*/
+        }
+
+        div:hover {
+            background-color: cyan;
+        }
+
+        input:focus {
+            /*捕捉焦点（或者是获取焦点）*/
+            background-color: gray;
+        }
+
+        p:first-letter {
+            color: blueviolet;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="http://www.baidu.com" target="_blank">百度一下，你就知道</a><br>
+    <div></div>
+    <input type="text">
+    <p>爱我你怕了吗？！！！！</p>
+    
+</body>
+</html>
