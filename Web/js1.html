@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        /*for (var x = 0; x <= 3; x++) {
+
+                                }
+
+                                function add() {
+                                    var a = 9;
+                                    x = 8;
+                                }
+                                alert(a); //报错的原因是a为局部变量，在全局找不到
+                                alert(x);*/
+        var str = "aaahhhjkkj";
+
+        function println(val) {
+            document.write(val + "<br>");
+        }
+        println(str.length);
+        println(str.charAt(1));
+        println(str.replace("aaa", "bbb"));
+        //字符串翻转
+        function reserve(str) {
+            var zero = "";
+            for (var i = 0; i < str.length; i++) {
+                //                zero=str.charAt(str.length-1-i)+zero;
+                document.write(str.charAt(str.length - 1 - i));
+            }
+            document.write("<br>")
+
+        }
+
+       /* function reserve1(str) {
+            var zero = "";
+            for (var i = 0; i < str.length; i++) {
+                zero = zero + str.charAt(str.length - 1 - i);
+
+            }
+            document.write(zero);
+
+        }*/
+
+        
+        
+        //对某对象的属性和方法进行封装，使其能直接调用
+        String.prototype.reserve1=function(){
+             var zero = "";
+            for (var i = 0; i < this.length; i++) {
+                zero = zero + this.charAt(this.length - 1 - i);
+
+            }
+            document.write(zero);
+            document.write("<br>");
+
+            
+        }
+        String.prototype.len=10;
+        document.write(str.len);
+        
+//        reserve(str);
+//        reserve1(str);
+        str.reserve1();
+    </script>
+</body>
+</html>

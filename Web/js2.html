@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //创建类及其对象
+        function person1(val1, val2) {
+            this.name1 = val1;
+            this.age1 = val2;
+            person1.prototype.eat = function() {
+                alert("吃好点")
+            }
+
+
+        }
+
+
+
+        var person1 = new person1("zhangsan", 20);
+        alert(person1.age1);
+        alert(person1.name1);
+        person1.eat();
+        //默认将整个类里面的成员看做键值对，输出的是值
+        for (a in person1) {
+            document.write(person1[a] + "<br>");
+        }
+
+    </script>
+</body>
+
+</html>

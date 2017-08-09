@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table tr td {
+            border: red solid 1px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript" src="js.js">
+        //    alert("hello world");
+        // function为关键字
+
+    </script>
+    <script type="text/javascript">
+        var a = 10;
+        var arr = [1, 1, 1]; //声明数组前面不加中括号，后面的花括号改为中括号
+        alert(arr.length);
+        alert(arr[0]);
+        alert(arr[3]); //此处会显示undefined，因为未定义
+
+        alert(typeof(a));
+        alert(a + true);
+        document.write("我是周大爷" + "<br>") //在页面上写内容
+        if (a = 10) { //在这里和Java的区别是这里相当于给啊重新赋值了，并且而是正确的。而在Java当中使不能被编译的，所以为防止这种情况可以把式子写为10=a，这样就会报错了，但是正规写法还是10==a
+            alert("yes");
+        } else {
+            alert("no");
+        }
+        function add(){
+            alert("嗨皮");
+            return 100;
+        }
+        alert(add());
+        function abc(x, y){
+            alert(x+y);
+            alert(arguments.length);//此处是默认将入的参数封装成一个名字为arguments的数组里面了。x和y分别代表的是角标为0和1的元素。当无参数时默认数组长度为0
+        }
+       /* alert(add);//此处输出的是方法本身，不需要加（）*/
+      
+        document.write("<table>");
+        for (var i = 1; i < 10; i++) {
+            document.write("<tr>")
+            for (var j = 1; j < 10; j++) {
+                if (j <= i) {
+                    document.write("<td>" + j + " * " + i + " = " +
+                        i * j + "&nbsp;&nbsp;&nbsp;" + "</td>");
+                }
+            }
+            document.write("</tr>");
+
+        }
+        document.write("</table>");
+
+    </script>
+    <input type="button" onclick="add()" value="按钮">
+    <input type="button" onclick="abc(3,4,5)" value="按钮1"><!--谁调用谁赋值-->
+</body>
+
+</html>
