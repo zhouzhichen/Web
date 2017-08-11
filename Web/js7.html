@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 300px;
+            background-color: aqua;
+        }
+
+        table {
+
+            border: red solid 1px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <input type="button" onclick="add()" value="添加"><br>
+    <lable>请输入行</lable><input type="text" id="hang">
+    <lable>请输入列</lable><input type="text" id="lie">
+    <hr>
+    <div>
+
+    </div>
+</body>
+<script>
+    function add() {
+        var ot = document.createElement("table");
+        var otr = document.createElement("tr");
+        var otd = document.createElement("td");
+        otd.innerHTML = "早上好";
+        otr.appendChild(otd);
+        ot.appendChild(otr);
+        var od = document.getElementsByTagName("div")[0];
+        od.appendChild(ot);
+    }
+
+</script>
+
+</html>

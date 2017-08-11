@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="button" value="事件点击按钮" onclick="add()"><br>
+    <input type="button" value="事件点击按钮1" onclick="settime()"><br>
+    <input type="button" value="事件点击按钮2" onclick="settime1()"><br>
+    <input type="button" value="stop" onclick="stop()"><br>
+    <input type="button" value="move" onclick="move()"><br>
+    <input type="button" value="选择" onclick="confirm1()"><br>
+    <input type="button" value="locat" onclick="locat()"><br>
+    <div id="divId">这是一个div</div>
+    <input type="text" name="name1" value="1">
+    <input type="text" name="name1" value="2">
+    <input type="text" name="name1" value="3">
+    <input type="button" value="获取" onclick="huoqu()"><br>
+</body>
+<script type="text/javascript">
+    var mywindow;
+
+    function add() {
+        mywindow = window.open("", null, "height=200,width=400,status=yes,toolbar=yes,menubar=yes,location=yes")
+    }
+
+    function settime() {
+        window.setTimeout("add()", 2000)
+    };
+    //每隔2000毫秒重复弹出窗口
+    function settime1() {
+        Interval = setInterval("add()", 2000)
+    };
+
+    function stop() {
+        window.clearInterval(Interval);
+    }
+
+    function move() {
+        mywindow.moveBy(200, 20);
+    }
+
+    function confirm1() {
+        var v = window.confirm("您要选择的是？");
+        alert(v);
+    }
+
+    function locat() {
+        //       var v= window.location.href
+        //        alert(v);
+        //        winodw.location.href="http://www.baidu.com";
+        //        location.replace("http://www.baidu.com");
+        var odiv = document.getElementById("divId"); //获得ID为divId的这个表对象
+        alert(odiv.previousSibling.nodeName); //它的上一个兄弟节点的名称
+        alert(odiv.nodeName); //获得这个节点的名称
+        odiv.innerHTML = "可惜被改掉了";
+        //         odiv.innerHTML+="可惜被改掉了";(这里实现加等)
+    }
+
+    function huoqu() {
+        var n = document.getElementsByName("name1"); //得到的是一个集合（name为name1的所有对象的集合）
+       /* var va = document.createElement("span");    创建一个新的节点
+        n.appendChild(va);*/                        //并把创造的新的节点给添加到n节点里面当做子节点
+
+        alert(n[0].value);
+        var v = document.getElementsByTagName("input"); //的得到的是input的所有标签
+        alert(v.length);
+    }
+</script>
+
+</html>

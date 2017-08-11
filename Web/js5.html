@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        #box {
+            margin: 0 auto;
+            height: 50px;
+
+
+            margin-top: 20px;
+            font-size: 23px;
+            text-align: center;
+        }
+
+        #num1 {
+
+            border-collapse: collapse;
+            margin: 0 auto;
+            width: 900px;
+            height: 50px;
+            font-size: 23px;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        #box2 {
+            margin: 0 auto;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="box">
+        学号：
+        <input type="text" id="1"> 姓名：
+        <input type="text" id="2"> 年龄：
+        <input type="text" id="3">
+        <input type="button" value="添加" onclick="add()">
+    </div>
+    <table id="num1" border="1">
+
+        <tr>
+            <td>选择</td>
+            <td>学号</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>操作</td>
+        </tr>
+    </table>
+    <div id="box2">
+        <input type="button" value="全选" onclick="selectall()">
+        <input type="button" value="全不选" onclick="deleteall()">
+        <input type="button" value="删除选中" onclick="ugly()">
+    </div>
+</body>
+<script>
+    function add() {
+        var oc = document.getElementById("num1");
+        var oc1 = document.createElement("tr");
+        var dc = oc.appendChild(oc1);
+        var ac1 = document.createElement("td");
+        var bo1 = document.createElement("input");
+        bo1.setAttribute("type", "checkbox");
+        var adc1 = dc.appendChild(ac1);
+        adc1.appendChild(bo1)
+
+
+        var ac2 = document.createElement("td");
+        var adc2 = dc.appendChild(ac2);
+        var xuehao = document.getElementById("1");
+        var xuehao1 = xuehao.value;
+        adc2.innerHTML = xuehao1;
+        var ac3 = document.createElement("td");
+        var adc3 = dc.appendChild(ac3);
+        var xingming = document.getElementById("2");
+        var xingming1 = xingming.value;
+        adc3.innerHTML = xingming1;
+        var ac4 = document.createElement("td");
+        var adc4 = dc.appendChild(ac4);
+        var nianling = document.getElementById("3");
+        var nianling1 = nianling.value;
+        adc4.innerHTML = nianling1;
+        var ac5 = document.createElement("td");
+        var adc5 = dc.appendChild(ac5);
+        var bo2 = document.createElement("input");
+        bo2.setAttribute("type", "button");
+        bo2.setAttribute("value", "delete");
+        bo2.setAttribute("onclick", "delete1(this)");
+        adc5.appendChild(bo2);
+
+    }
+
+    function delete1(x) {
+        var ota = document.getElementById("num1");
+        ota.removeChild(x.parentNode.parentNode);
+    }
+
+    function selectall() {
+        var al = document.getElementsByTagName("input");
+        for (var i = 0; i < al.length; i++) {
+            if (al[i].type == "checkbox") {
+                al[i].checked = true;
+            }
+        }
+    }
+
+    function deleteall() {
+        var al = document.getElementsByTagName("input");
+        for (var i = 0; i < al.length; i++) {
+            if (al[i].type == "checkbox") {
+                al[i].checked = false;
+            }
+        }
+    }
+
+    function ugly() {
+        var al = document.getElementsByTagName("input");
+        for (var i = al.length - 1; i >= 0; i--) {
+            if (al[i].type == "checkbox") {
+                if (al[i].checked == true) {
+                    var ota = document.getElementById("num1");
+                    ota.removeChild(al[i].parentNode.parentNode);
+                }
+            }
+        }
+
+    }
+
+</script>
+
+</html>

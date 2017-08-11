@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .abc{
+            height: 200px;
+            width: 400px;
+            background-color: antiquewhite
+        };
+    </style>
+
+</head>
+
+<body>
+    <input type="button" onclick="aaa()" value="变大">
+    <input type="button" onclick="bbb()" value="变小">
+    <div class="abc">
+        <p id="p1" style="font-size: 16px;">比较好的改变计划比较好的改变计划比较好的改变计划比较好的改变计划比较好的改变计划比较好的改变计划</p>
+    </div>
+</body>
+<script>
+    function aaa() {
+        var mn = document.getElementById("p1");
+        var size1 = mn.style.fontSize;
+        var size10 = parseInt(size1);
+        mn.style.cssText = "font-size:" + (size10 + 5) + "px";
+    }
+
+    function bbb() {
+        var mn = document.getElementById("p1");
+        var size1 = mn.style.fontSize;
+        var size10 = parseInt(size1); //返回的只有数字
+        mn.style.cssText = "font-size:" + (size10 - 5) + "px";
+    }
+
+</script>
+
+</html>

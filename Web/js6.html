@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        dl {
+            overflow: hidden;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <dl>
+        <dt onclick="list()">显示内容</dt>
+        <dd>dfd</dd>
+        <dd>dffsdf</dd>
+        <dd>fgsdfgsd</dd>
+    </dl>
+</body>
+<script>
+    var flag = true;
+
+    function list() {
+        var on = document.getElementsByTagName("dl")[0];
+        if (flag) {
+            on.style.overflow = "visible";
+            flag = false;
+        } else {
+            on.style.overflow = "hidden";
+            flag = true;
+        }
+    }
+</script>
+</html>
