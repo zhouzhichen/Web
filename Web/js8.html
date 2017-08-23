@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" value="10000">10000 <br>
+    <input type="checkbox" value="10000">10000 <br>
+    <input type="checkbox" value="10000">10000 <br>
+    <input type="checkbox" value="10000">10000 <br>
+    <input type="checkbox" value="10000">10000 <br>
+    <input type="checkbox" value="10000">10000 <br>
+    <input type="button" value="总价" onclick="add()">
+    <input type="text" id="eva4"> <br>
+
+    <input type="button" onclick="change()" value="排序">
+    <table id="eva0">
+        <tr>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>17</td>
+        </tr>
+        <tr>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>20</td>
+        </tr>
+    </table>
+</body>
+<script>
+    function change() {
+
+        var eva1 = [];
+        var ot = document.getElementById("eva0");
+        var ro = ot.rows;
+        for(var k=0;k<ro.length;k++){
+            eva1[k]=ro[k];
+        }
+        for (var i = 0; i < eva1.length; i++) {
+            for (var j = 1; j < eva1.length - 1; j++) {
+                if (parseInt((eva1[j].cells)[0].innerHTML) > parseInt((eva1[j + 1].cells)[0].innerHTML)) {
+                    var temp = eva1[j];
+                    eva1[j] = eva1[j + 1];
+                    eva1[j + 1] = temp;
+                }
+            }
+        }
+        for(var n=0;n<ro.length-1;n++){
+            ot.appendChild(eva1[n+1])
+        }
+        
+    }
+    
+    function add(){
+        var eva2=document.getElementsByTagName("input");
+        var eva3=0;
+        for(var i=0;i<eva2.length;i++){
+            if(eva2[i].type=="checkbox"){
+                if(eva2[i].checked==true){
+                    eva3+=parseInt(eva2[i].value);
+                }
+            }
+        }
+        var eva5=document.getElementById("eva4");
+        eva5.value=eva3;
+        
+}
+</script>
+</html>
